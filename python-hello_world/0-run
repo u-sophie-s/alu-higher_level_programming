@@ -1,3 +1,2 @@
 #!/bin/bash
-PYFILE="python_script.py"
-python3 $PYFILE
+PYFILE="python_script.py"; python3 $PYFILE
