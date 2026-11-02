@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 def islower(str):
-    for char in str:
-        if (str == ""):
-            return "error"
+        if not str:
+            raise ValueError
         else:
-            if ord(char) >= 97 and ord(char) <= 122:
-               return True
-            else:
-               return False
+           for char in str: 
+               if ord(char) >= 97 and ord(char) <= 122:
+                   continue
+               else:
+                   return False
+        return True
