@@ -6,4 +6,4 @@ def print_reversed_list_integer(my_list=[]):
         last_Index = last_Index - 1
         if (last_Index < 0):
             break
-        print(my_list[last_Index])
+        print("{:d}".format(my_list[last_Index]))
