@@ -1,10 +1,16 @@
 #!/usr/bin/python3
 
 
-def multiply_by_2(a_dictionary):
-    new_dictionary = {}
+def best_score(a_dictionary):
+    if not a_dictionary:
+        return None
+
+    best_key = None
+    highest_score = 0
 
     for key in a_dictionary:
-        new_dictionary[key] = a_dictionary[key] * 2
+        if a_dictionary[key] > highest_score:
+            highest_score = a_dictionary[key]
+            best_key = key
 
-    return new_dictionary
+    return best_key
