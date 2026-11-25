@@ -46,15 +46,12 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Print the square at its specified position."""
+        """Print the square using the hash character."""
         if self.__size == 0:
             print()
             return
 
-        for i in range(self.__position[0]):
-            print()
-
+        print("\n" * self.__position[0], end="")
         for i in range(self.__size):
-            print(" " * self.__position[1], end="")
-            print("#" * self.__size)
-
+            print(" " * self.__position[1] +
+                  "#" * self.__size)
