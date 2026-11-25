@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """This module defines a Square class with position properties."""
 
@@ -33,9 +32,15 @@ class Square:
     @position.setter
     def position(self, value):
         """Set the position after validating its values."""
-        if (type(value) is not tuple or len(value) != 2 or
-                type(value[0]) is not int or type(value[1]) is not int or
-                value[0] < 0 or value[1] < 0):
+        if type(value) is not tuple or len(value) != 2:
+            raise TypeError(
+                "position must be a tuple of 2 positive integers"
+            )
+        if type(value[0]) is not int or type(value[1]) is not int:
+            raise TypeError(
+                "position must be a tuple of 2 positive integers"
+            )
+        if value[0] < 0 or value[1] < 0:
             raise TypeError(
                 "position must be a tuple of 2 positive integers"
             )
@@ -46,12 +51,11 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Print the square using the hash character."""
+        """Print the square at its specified position."""
         if self.__size == 0:
             print()
-            return
-
-        print("\n" * self.__position[0], end="")
-        for i in range(self.__size):
-            print(" " * self.__position[1] +
-                  "#" * self.__size)
+        else:
+            for i in range(self.__position[0]):
+                print()
+            for i in range(self.__size):
+                print(" " * self.__position[1] + "#" * self.__size)
